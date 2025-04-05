@@ -109,6 +109,7 @@ export default function Question() {
 
     return (
         <SafeAreaView style={styles.container}>
+          <View style={styles.content}>
             <Text style={styles.questionPrompt}>{questions[questionID].prompt}</Text>
             <FlatList 
             data= {questions[questionID].choices}
@@ -121,6 +122,8 @@ export default function Question() {
             <View  styles={styles.buttons}>
                 <Button onPress={() => handleCheckNext()} title='Next Question'/>
             </View>
+          </View>
+            
         </SafeAreaView>
     )
 }
@@ -129,6 +132,14 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       margin: 50,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    content: {
+      flex: 1,
+      margin: 300,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
